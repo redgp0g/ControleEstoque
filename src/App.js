@@ -3,10 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { Routes, Route, Link } from "react-router-dom";
 
-import AddEstoque from "./components/AddEstoque";
-import Estoque from "./components/Estoque";
-import EstoqueList from "./components/EstoqueList";
-import EstoqueDashboard from "./components/EstoqueDashboard";
+import AddAlertaEstoque from "./components/AddAlertaEstoque";
+import AlertaEstoqueList from "./components/AlertaEstoqueList";
 
 function App() {
   return (
@@ -17,7 +15,7 @@ function App() {
         </a>
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
-            <Link to={"/estoque"} className="nav-link">
+            <Link to={"/alertaestoque"} className="nav-link">
               Estoques Lançados
             </Link>
           </li>
@@ -26,20 +24,13 @@ function App() {
               Lançar
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to={"/estoquedashboard"} className="nav-link">
-              Dashboard
-            </Link>
-          </li>
         </div>
       </nav>
 
       <div className="container mt-3">
         <Routes>
-          <Route path="/estoque" element={<EstoqueList/>} />
-          <Route path="/add" element={<AddEstoque/>} />
-          <Route path="/estoque/:id" element={<Estoque/>} />
-          <Route path="/estoquedashboard" element={<EstoqueDashboard/>} />
+          <Route path="/alertaestoque" element={<AlertaEstoqueList/>} />
+          <Route path="/add" element={<AddAlertaEstoque/>} />
         </Routes>
       </div>
     </div>

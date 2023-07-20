@@ -1,0 +1,12 @@
+.urgente {
+    color: red!important;
+  }
+  
+  .pouco-urgente {
+    color: yellow!important;
+  }
+  
+  .nao-urgente {
+    color: green!important;
+  }
+  
