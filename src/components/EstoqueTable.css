@@ -9,4 +9,7 @@
   .nao-urgente {
     color: green!important;
   }
+  .table tbody tr td{
+    background-color: rgba(207, 207, 207, 0.596)!important;
+  }
   

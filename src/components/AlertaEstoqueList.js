@@ -14,13 +14,14 @@ const AlertaalertaEstoquesList = () => {
 
   
   const filterData = (data, term) => {
-    if (term == "") {
+    if (term === "") {
       return data;
     } else {
       return data.filter((estoque) => {
         return (
           estoque.data.toLowerCase().includes(term.toLowerCase()) ||
-          estoque.funcionario.nome.toLowerCase().includes(term.toLowerCase())
+          estoque.urgencia.toLowerCase().includes(term.toLowerCase())||
+          estoque.setor.toLowerCase().includes(term.toLowerCase())
         );
       });
     }
@@ -28,7 +29,7 @@ const AlertaalertaEstoquesList = () => {
   };
 
   const onChangeSearchData = (e) => {
-    if (e.target.value == "") {
+    if (e.target.value === "") {
       resetSearch();
     } else {
       setSearchTerm(e.target.value);
@@ -72,7 +73,7 @@ const AlertaalertaEstoquesList = () => {
           />
         </div>
       </div>
-      <div className="col-md-6">
+      <div className="col-md-12">
         <h4>alertaEstoques Lançados</h4>
         <EstoqueTable alertaestoques={alertaestoques} />
 

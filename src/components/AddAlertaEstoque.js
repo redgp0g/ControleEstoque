@@ -5,11 +5,12 @@ import { format } from 'date-fns';
 const AddAlertaEstoque = () => {
     const initialEstoqueState = {
         id: 0,
-        setor: "",
-        urgencia: "",
-        data: format(new Date(), 'yyyy-MM-dd'),
-        peca: 0,
-        quantidade: 0
+        setor: null,
+        urgencia: null,
+        data: format(new Date(), 'yyyy-MM-dd\'T\'HH:mm:ss'),
+        peca: null,
+        quantidade: null,
+        entregue: false
     };
     const [Estoque, setAlertaEstoque] = useState(initialEstoqueState);
     const [submitted, setSubmitted] = useState(false);
@@ -26,7 +27,8 @@ const AddAlertaEstoque = () => {
             urgencia: Estoque.urgencia,
             data: Estoque.data,
             peca: Estoque.peca,
-            quantidade: Estoque.quantidade
+            quantidade: Estoque.quantidade,
+            entregue: Estoque.entregue
         };
         console.log(Estoque);
         AlertaEstoqueDataService.create(data)
@@ -39,6 +41,7 @@ const AddAlertaEstoque = () => {
                     data: response.data.data,
                     peca: response.data.peca,
                     quantidade: response.data.quantidade,
+                    entregue: response.data.entregue
                 });
                 setSubmitted(true);
                 console.log(response.data);
@@ -77,7 +80,7 @@ const AddAlertaEstoque = () => {
                         >
                             <option
                                 selected
-                                value="">
+                                value={null}>
                                 Selecione a Urgência
                             </option>
                             <option
@@ -96,14 +99,14 @@ const AddAlertaEstoque = () => {
                         </select>
                     </div>
                     <div className="form-group">
-                        <label htmlFor="Setor">Setor</label>
+                        <label htmlFor="setor">Setor</label>
                         <input
                             className="form-control"
-                            id="Setor"
+                            id="setor"
                             required
                             value={Estoque.setor}
                             onChange={handleInputChange}
-                            name="Setor"
+                            name="setor"
                         />
                     </div>
 
@@ -121,7 +124,7 @@ const AddAlertaEstoque = () => {
                     </div>
 
                     <div className="form-group">
-                        <label htmlFor="quantidade">Quantidade</label>
+                        <label htmlFor="quantidade">Quantidade Necessária de caixas</label>
                         <input
                             type="number"
                             className="form-control"
