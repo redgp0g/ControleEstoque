@@ -74,7 +74,7 @@ const AlertaalertaEstoquesList = () => {
         </div>
       </div>
       <div className="col-md-12">
-        <h4>alertaEstoques Lançados</h4>
+        <h4>Estoques Lançados</h4>
         <EstoqueTable alertaestoques={alertaestoques} />
 
       </div>

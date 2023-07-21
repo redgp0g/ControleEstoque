@@ -16,12 +16,12 @@ function App() {
         <div className="navbar-nav mr-auto">
           <li className="nav-item">
             <Link to={"/alertaestoque"} className="nav-link">
-              Estoques Lançados
+              Estoques Solicitados
             </Link>
           </li>
           <li className="nav-item">
             <Link to={"/add"} className="nav-link">
-              Lançar
+              Solicitar Caixas
             </Link>
           </li>
         </div>
