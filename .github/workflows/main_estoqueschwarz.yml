@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'estoqueschwarz'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_11A337D320BE4FE9963E4F030FD0AE47 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B7442669C3964FDA8495230C5B9E11D5 }}
           package: .
