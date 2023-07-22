@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default axios.create({
-  baseURL: "estoqueschwazapi.azurewebsites.net",
+  baseURL: "https://estoqueschwazapi.azurewebsites.net/api",
   headers: {
     "Content-type": "application/json"
   }
